@@ -1,0 +1,14 @@
+{
+  "name": "github-api-serverless",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "serverless-plugin-typescript": "^2.1.1",
+    "typescript": "^4.6.2"
+  }
+}

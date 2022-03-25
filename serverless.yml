@@ -1,0 +1,32 @@
+org: dannydenver
+app: github-api-serverless
+service: github-api-serverless
+frameworkVersion: '3'
+
+plugins:
+  - serverless-plugin-typescript
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  GitHubApi:
+    handler: github-api.handler
+    events:
+      - http:
+          method: get
+          path: /api/v1/repos/{owner}/{repo}/pulls
+          documentation:
+            summary: Get Open Pull Requests
+            description: Gets repositories open pull requests and the amount of commits in each pull request.
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: false
